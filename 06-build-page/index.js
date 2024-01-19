@@ -10,10 +10,10 @@ async function createHtmlFromTemplate(templatePath, componentsPath, distPath) {
       encoding: 'utf-8',
     });
 
-    const templateTags = template.match(/{{(\w+)}}/gm);
+    const templateTags = template.match(/{{([\w-]+)}}/gm);
 
     for (const tag of templateTags) {
-      let tagName = tag.match(/\w+/);
+      let tagName = tag.match(/[\w-]+/);
 
       let tagContent = await fsPromises.readFile(
         path.join(componentsPath, `${tagName}.html`),
