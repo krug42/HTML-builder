@@ -64,7 +64,6 @@ async function copyAssets(assetsPath, distPath) {
   try {
     await fsPromises.mkdir(distPath, { recursive: true });
     const entries = await fsPromises.readdir(assetsPath, {
-      recursive: true,
       withFileTypes: true,
     });
 
