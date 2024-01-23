@@ -96,10 +96,10 @@ async function processAll() {
   createHtmlFromTemplate(
     path.join(__dirname, 'template.html'),
     path.join(__dirname, 'components'),
-    path.join(distPath),
+    distPath,
   );
 
-  bundleStyles(path.join(__dirname, 'styles'), path.join(distPath));
+  bundleStyles(path.join(__dirname, 'styles'), distPath);
 
   copyAssets(path.join(__dirname, 'assets'), path.join(distPath, 'assets'));
 }
